@@ -17,14 +17,8 @@ typedef struct {
 	int size;
 } Array_i;
 
-typedef struct {
-	int size;
-	void* a;
-} Array;
-
 int *_filter(const int array[], int size, int (*callback)(int));
 Array_i *_filter_v1(const Array_i *ar, int (*callback)(int));
-Array* _filter_generic_v1(const Array* ar, int (*callback)(const void*));
 
 
 #endif /* higher_order_funcs_h */

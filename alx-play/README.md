@@ -21,13 +21,18 @@ Finally, it returns the pointer to the new array.
 
 Note that the callback function passed to this function must be a function that takes an integer argument and returns a boolean value indicating whether the integer satisfies some condition. The callback function is called on each element of the original array to determine whether it should be included in the filtered array.
 
+
 ```
-Array* _filter_generic_v1(const Array* ar, int (*callback)(const void*))
+Array_i *_filter_v1(const Array_i *ar, int (*callback)(int));
 ```
-This implementation takes in a pointer to an Array struct, which has an integer size and a void pointer a that can point to any type of array.
+This is a C function called _filter_v1 that takes in a pointer to an Array_i struct and a pointer to a callback function that takes an int argument and returns an int.
 
-The function iterates over the elements of the input array, and uses memcpy to copy elements that pass the callback function to the new filtered array. The sizeof(void*) is used to ensure that the function works with arrays of any type.
+The Array_i struct contains an array of integers (a) and the size of the array (size).
 
-After the filtering is complete, the function sets the size of the new array to the number of elements that passed the filter, and resizes the array to the correct size using realloc.
+The purpose of the _filter_v1 function is to iterate through each element in the array pointed to by ar, apply the callback function to each element, and create a new Array_i struct containing only the elements that satisfy the condition specified in the callback function.
 
-Finally, the function returns a pointer to the filtered Array struct.
+The function does this by first allocating memory for a new Array_i struct and its a array using malloc. It then loops through each element in the input Array_i struct (ar) and applies the callback function to it. If the result of the callback function is non-zero, the current element is added to the new Array_i struct (ptr).
+
+Once all the elements have been processed, the function updates the size of the new Array_i struct (ptr) to reflect the number of elements that satisfied the condition specified in the callback function. It then shrinks the size of the a array to fit only the elements that were added to it using realloc, and returns the new Array_i struct.
+
+Note that the caller of this function is responsible for freeing the memory allocated for the new Array_i struct and its a array using free.

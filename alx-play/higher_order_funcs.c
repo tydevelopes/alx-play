@@ -40,23 +40,3 @@ Array_i *_filter_v1(const Array_i *ar, int (*callback)(int))
 	
 	return ptr;
 }
-
-Array* _filter_generic_v1(const Array* ar, int (*callback)(const void*))
-{
-	int i, j;
-	Array* ptr = malloc(sizeof(Array));
-	ptr->a = malloc(ar->size * sizeof(void*));
-	
-	for (i = 0, j = 0; i < ar->size; i++) {
-		const void* elem = (const char*)ar->a + i * sizeof(void*);
-		if (callback(elem)) {
-			memcpy((char*)ptr->a + j++ * sizeof(void*), &elem, sizeof(void*));
-		}
-	}
-	ptr->size = j;
-	ptr->a = realloc(ptr->a, j * sizeof(void*));
-	
-	return ptr;
-}
-
-

@@ -11,6 +11,10 @@ int iseven(int n){
 	return n % 2 == 0;
 }
 
+int containsA(void *str) {
+	return *((char *)str) == 'a' || *((char *)str) == 'A';
+}
+
 int main(int argc, const char *argv[])
 {
 	int a[] = {100,2,30,4,6,12};
@@ -41,5 +45,6 @@ int main(int argc, const char *argv[])
 	free(even_nums);
 	free(filtered->a);
 	free(filtered);
+	
 	return 0;
 }
