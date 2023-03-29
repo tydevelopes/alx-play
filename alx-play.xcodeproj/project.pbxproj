@@ -29,6 +29,7 @@
 		4B12D62B29D2DFAC00FB67AF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4B12D63029D3C23200FB67AF /* higher_order_funcs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = higher_order_funcs.h; sourceTree = "<group>"; };
 		4B12D63129D3C23200FB67AF /* higher_order_funcs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = higher_order_funcs.c; sourceTree = "<group>"; };
+		4B12D63529D4F60D00FB67AF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +46,7 @@
 		4B12D61129D022C300FB67AF = {
 			isa = PBXGroup;
 			children = (
+				4B12D63529D4F60D00FB67AF /* README.md */,
 				4B12D61C29D022C300FB67AF /* alx-play */,
 				4B12D61B29D022C300FB67AF /* Products */,
 			);
