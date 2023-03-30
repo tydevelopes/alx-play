@@ -41,9 +41,19 @@ Array_i *_filter_v1(const Array_i *ar, int (*callback)(int))
 	return ptr;
 }
 
+/**
+ 
+ * Filters the strings in the given Array_s based on a given filter condition.
+ * @param ar - The Array_s pointer containing the strings to be filtered.
+ * @param callback - The filter condition to be applied to each string. A pointer to a function that takes a char pointer as an argument and returns an integer value (usually 0 or 1).
+ * @return A new Array_s pointer containing only the strings from the original Array_s that meet the filter condition.
+ */
 Array_s *filter_strings(const Array_s *ar, int (*callback)(char *))
 {
 	unsigned int i, j;
+	
+	if (!ar || !ar->strings)
+		return NULL;
 	// allocate space for the whole struct
 	Array_s *ptr = malloc(sizeof(Array_s));
 	
@@ -76,6 +86,8 @@ Array_s *filter_strings(const Array_s *ar, int (*callback)(char *))
 				free(ptr);
 				return NULL;
 			}
+			if (!ar->strings[i])
+				return NULL;
 			strcpy(ptr->strings[j], ar->strings[i]);
 			j++;
 		}

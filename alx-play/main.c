@@ -7,21 +7,24 @@
 
 #include "higher_order_funcs.h"
 
+int iseven(int n);
 int contains_a(char *s);
 void test_filter_strings_func(void);
 void print_strings(const char **s, unsigned int size);
 void print(Array_s *ptr);
 void free_s(Array_s *ptr);
 
-int iseven(int n){
-	return n % 2 == 0;
-}
-
 int main(int argc, const char *argv[])
 {
 	
 	test_filter_strings_func();
+	
 	return 0;
+}
+
+
+int iseven(int n){
+	return n % 2 == 0;
 }
 
 int contains_a(char *s)
