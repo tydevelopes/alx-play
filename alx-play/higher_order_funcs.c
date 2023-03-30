@@ -40,3 +40,48 @@ Array_i *_filter_v1(const Array_i *ar, int (*callback)(int))
 	
 	return ptr;
 }
+
+Array_s *filter_strings(const Array_s *ar, int (*callback)(char *))
+{
+	unsigned int i, j;
+	// allocate space for the whole struct
+	Array_s *ptr = malloc(sizeof(Array_s));
+	
+	if (!ptr) {
+		printf("Allocation fail for struct type Array_s\n");
+		return NULL;
+	}
+	
+	// allocate space for array of strings
+	ptr->strings = malloc(sizeof(char *) * ar->size);
+	
+	if (!ptr->strings) {
+		printf("Allocation fail for ptr->strings array\n");
+		free(ptr);
+		return NULL;
+	}
+	
+	// allocate space for individual strings filter condition
+	for (i = 0, j = 0; i < ar->size; i++)
+	{
+		if (callback(ar->strings[i])) {
+			ptr->strings[j] = malloc(sizeof(char) * (strlen(ar->strings[i]) + 1));
+			
+			if (!ptr->strings[j]) {
+				printf("Allocation fail for ptr->strings[%d] string\n", j);
+				for (int i = 0; i < j; i++) {
+					free(ptr->strings[i]);
+				}
+				free(ptr->strings);
+				free(ptr);
+				return NULL;
+			}
+			strcpy(ptr->strings[j], ar->strings[i]);
+			j++;
+		}
+	}
+	ptr->size = j;
+	ptr->strings = realloc(ptr->strings, sizeof(char *) * j);
+	
+	return  ptr;
+}

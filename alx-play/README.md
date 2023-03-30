@@ -36,3 +36,23 @@ The function does this by first allocating memory for a new Array_i struct and i
 Once all the elements have been processed, the function updates the size of the new Array_i struct (ptr) to reflect the number of elements that satisfied the condition specified in the callback function. It then shrinks the size of the a array to fit only the elements that were added to it using realloc, and returns the new Array_i struct.
 
 Note that the caller of this function is responsible for freeing the memory allocated for the new Array_i struct and its a array using free.
+
+
+```
+Array_s *filter_strings(const Array_s *ar, int (*callback)(char *));
+```
+This is a function that takes an Array_s pointer ar and a function pointer callback as input, and returns a new Array_s pointer that contains only the strings from ar that pass the filter condition defined by the callback function.
+
+The function first allocates space for a new Array_s struct using malloc() and checks if the allocation was successful. If it fails, it returns NULL.
+
+It then allocates space for an array of string pointers ptr->strings using malloc() with the size equal to ar->size. If the allocation fails, it frees the previously allocated space for the struct and returns NULL.
+
+Next, the function loops through the original array ar and calls the callback function with each string as input. If the callback function returns true for a string, it allocates space for a new string in the ptr->strings array using malloc() with the size equal to the length of the string plus one for the null terminator. If the allocation fails, it frees all previously allocated space for the struct and the strings, and returns NULL.
+
+If the allocation is successful, it copies the original string to the new space using strcpy() and increments the counter j.
+
+After the loop, the function updates the ptr->size to the number of strings that passed the filter, and reallocates the ptr->strings array to the correct size.
+
+Finally, it returns the new ptr pointer.
+
+Overall, this function is used to filter an array of strings based on a given condition, and returns a new array with the filtered strings. It also handles memory allocation and frees all allocated memory in case of any errors.

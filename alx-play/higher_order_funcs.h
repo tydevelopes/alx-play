@@ -17,8 +17,14 @@ typedef struct {
 	int size;
 } Array_i;
 
+typedef struct {
+	char **strings;
+	unsigned int size;
+} Array_s;
+
 int *_filter(const int array[], int size, int (*callback)(int));
 Array_i *_filter_v1(const Array_i *ar, int (*callback)(int));
+Array_s *filter_strings(const Array_s *ar, int (*callback)(char *));
 
 
 #endif /* higher_order_funcs_h */
