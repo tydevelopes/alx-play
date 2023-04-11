@@ -13,6 +13,7 @@
 		4B12D66729D57AF900FB67AF /* hof_test.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B12D66629D57AF900FB67AF /* hof_test.c */; };
 		4B12D66A29D5874B00FB67AF /* lists.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B12D66929D5874B00FB67AF /* lists.c */; };
 		4B12D66E29DA860700FB67AF /* int_list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B12D66D29DA860700FB67AF /* int_list.c */; };
+		4B12D67329DFFB1500FB67AF /* bit_manipulation.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B12D67229DFFB1300FB67AF /* bit_manipulation.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,9 @@
 		4B12D66929D5874B00FB67AF /* lists.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lists.c; sourceTree = "<group>"; };
 		4B12D66C29DA821A00FB67AF /* lists.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lists.h; sourceTree = "<group>"; };
 		4B12D66D29DA860700FB67AF /* int_list.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = int_list.c; sourceTree = "<group>"; };
+		4B12D67129DFFB1200FB67AF /* bit_manipulation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bit_manipulation.h; sourceTree = "<group>"; };
+		4B12D67229DFFB1300FB67AF /* bit_manipulation.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bit_manipulation.c; sourceTree = "<group>"; };
+		4B12D67529E153D300FB67AF /* file1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = file1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				4B12D61D29D022C300FB67AF /* main.c */,
+				4B12D67529E153D300FB67AF /* file1.txt */,
+				4B12D67129DFFB1200FB67AF /* bit_manipulation.h */,
+				4B12D67229DFFB1300FB67AF /* bit_manipulation.c */,
 				4B12D66629D57AF900FB67AF /* hof_test.c */,
 				4B12D63029D3C23200FB67AF /* higher_order_funcs.h */,
 				4B12D63129D3C23200FB67AF /* higher_order_funcs.c */,
@@ -145,6 +152,7 @@
 			files = (
 				4B12D66429D5424C00FB67AF /* linked_list.c in Sources */,
 				4B12D61E29D022C300FB67AF /* main.c in Sources */,
+				4B12D67329DFFB1500FB67AF /* bit_manipulation.c in Sources */,
 				4B12D63229D3C23200FB67AF /* higher_order_funcs.c in Sources */,
 				4B12D66729D57AF900FB67AF /* hof_test.c in Sources */,
 				4B12D66A29D5874B00FB67AF /* lists.c in Sources */,
